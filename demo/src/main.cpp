@@ -10,14 +10,12 @@
 using namespace business;
 using namespace tricycle;
 
-void init() {
+int main() {
     DemoService *service = new DemoService();
 
     TRICYCLE_CREATE_CLS(DemoService, Test, service);
     TRICYCLE_CREATE_CLS(DemoService, Test2, service);
-}
 
-int main() {
     TricycleServer server = TricycleServer();
     server.Serve(9090);
 }
