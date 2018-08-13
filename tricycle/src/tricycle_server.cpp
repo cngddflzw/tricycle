@@ -4,6 +4,7 @@
 #include "generic_service.h"
 #include "tricycle_server.hpp"
 #include "tricycle.hpp"
+#include <cstdio>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/server/TSimpleServer.h>
 #include <thrift/transport/TServerSocket.h>
@@ -36,7 +37,7 @@ namespace tricycle {
 
         TSimpleServer server(processor, serverTransport, transportFactory, protocolFactory);
 
-        std::printf("tricycle server start, bind port %d...\n", port);
+        printf("tricycle server start, bind port %d...\n", port);
         server.serve();
     }
 }
