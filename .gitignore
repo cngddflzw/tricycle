@@ -31,6 +31,8 @@
 *.out
 *.app
 
+.idea/
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -91,3 +93,13 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
