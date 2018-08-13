@@ -9,9 +9,11 @@ endif ()
 if (LINUX)
     message(STATUS "Use cxx 98")
     set(CMAKE_CXX_STANDARD 98)
+    set(tricycle_lib_dir /usr/local/lib64/tricycle/libtricycle.so)
 elseif (APPLE)
     message(STATUS "Use cxx 11")
     set(CMAKE_CXX_STANDARD 11)
+    set(tricycle_lib_dir /usr/local/lib/tricycle/libtricycle.dylib)
 else ()
     message(FATAL_ERROR "Unsupported operating system")
 endif ()
@@ -32,9 +34,4 @@ add_executable(tricycle_demo
 # 如果是 OSX, 需要在 .bash_profile 设置一下环境变量, 否则会找不到 dylib
 # export DYLD_LIBRARY_PATH=/usr/local/lib/tricycle:$DYLD_LIBRARY_PATH
 
-file(GLOB LIBRARIES
-        "/usr/local/lib/tricycle/libtricycle.dylib"
-        )
-message("LIBRARIES = ${LIBRARIES}")
-
-TARGET_LINK_LIBRARIES(tricycle_demo ${LIBRARIES})
+TARGET_LINK_LIBRARIES(tricycle_demo ${tricycle_lib_dir})
