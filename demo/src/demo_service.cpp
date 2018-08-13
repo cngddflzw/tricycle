@@ -2,6 +2,7 @@
 // Created by Zhenwei Liu on 2018/8/13.
 //
 #include <string>
+#include <tricycle/json.h>
 #include "demo_service.hpp"
 
 using namespace std;
