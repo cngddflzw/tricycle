@@ -13,8 +13,8 @@ using namespace tricycle;
 int main() {
     DemoService *service = new DemoService();
 
-    TRICYCLE_CREATE_CLS(DemoService, Test, service);
-    TRICYCLE_CREATE_CLS(DemoService, Test2, service);
+    TRICYCLE_CREATE_CLS(business, DemoService, Test, service);
+    TRICYCLE_CREATE_CLS(business, DemoService, Test2, service);
 
     TricycleServer server = TricycleServer();
     server.Serve(9090);

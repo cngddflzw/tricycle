@@ -32,35 +32,35 @@ namespace tricycle {
 #endif
 
 #ifndef TRICYCLE_CREATE_CLS
-#define TRICYCLE_CREATE_CLS(class_name, func_name, instance) \
-class TRICYCLE_CREATE_CLAZZ_NAME(class_name, func_name): public Invoker {\
+#define TRICYCLE_CREATE_CLS(ns, class_name, func_name, instance) \
+class TRICYCLE_CREATE_CLAZZ_NAME(ns, class_name, func_name): public Invoker {\
 private: \
-    class_name* TRICYCLE_CREATE_INSTANCE_NAME(class_name, func_name); \
+    class_name* TRICYCLE_CREATE_INSTANCE_NAME(ns, class_name, func_name); \
 public: \
-    TRICYCLE_CREATE_CLAZZ_NAME(class_name, func_name)(class_name *i) { \
-        TRICYCLE_CREATE_INSTANCE_NAME(class_name, func_name) = i; \
+    TRICYCLE_CREATE_CLAZZ_NAME(ns, class_name, func_name)(class_name *i) { \
+        TRICYCLE_CREATE_INSTANCE_NAME(ns, class_name, func_name) = i; \
     } \
     string Invoke(const Json::Value &json_array) const { \
-        return TRICYCLE_CREATE_INSTANCE_NAME(class_name, func_name)->func_name(json_array); \
+        return TRICYCLE_CREATE_INSTANCE_NAME(ns, class_name, func_name)->func_name(json_array); \
     } \
 }; \
 InvokerManager::Register(#class_name, #func_name, new TRICYCLE_CREATE_CLAZZ_NAME(class_name, func_name)(instance));
 #endif
 
 #ifndef TRICYCLE_CREATE_INSTANCE_NAME
-#define TRICYCLE_CREATE_INSTANCE_NAME(class_name, func_name) TRICYCLE_CREATE_NAME(class_name, func_name, INSTANCE)
+#define TRICYCLE_CREATE_INSTANCE_NAME(ns, class_name, func_name) TRICYCLE_CREATE_NAME(ns, class_name, func_name, INSTANCE)
 #endif
 
 #ifndef TRICYCLE_CREATE_CLAZZ_NAME
-#define TRICYCLE_CREATE_CLAZZ_NAME(class_name, func_name) TRICYCLE_CREATE_NAME(class_name, func_name, CLAZZ)
+#define TRICYCLE_CREATE_CLAZZ_NAME(ns, class_name, func_name) TRICYCLE_CREATE_NAME(ns, class_name, func_name, CLAZZ)
 #endif
 
 #ifndef TRICYCLE_CREATE_NAME
-#define TRICYCLE_CREATE_NAME(class_name, func_name, suffix) class_name##_##func_name##_##suffix
+#define TRICYCLE_CREATE_NAME(ns, class_name, func_name, suffix) ns##_##class_name##_##func_name##_##suffix
 #endif
 
 #ifndef TRICYCLE_FUNC_KEY
-#define TRICYCLE_FUNC_KEY(class_name, func_name) TRICYCLE_TO_STR(class_name##_##func_name##_ivk)
+#define TRICYCLE_FUNC_KEY(ns, class_name, func_name) TRICYCLE_TO_STR(ns##_##class_name##_##func_name##_ivk)
 #endif
 
 #ifndef TRICYCLE_TO_STR
