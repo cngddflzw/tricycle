@@ -53,7 +53,7 @@ namespace business {
         // deserialization
         Param param1 = Param(json_array[0]["name"].asString(), json_array[0]["code"].asInt());
         Param param2 = Param(json_array[1]["name"].asString(), json_array[1]["code"].asInt());
-        Result result = Result(param1.GetName() + "::" + param2.GetName(), param2.GetCode() + param2.GetCode());
+        Result result = Result(param1.GetName() + "::" + param2.GetName(), param1.GetCode() + param2.GetCode());
 
         // serialization
         Json::Value j;

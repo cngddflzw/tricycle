@@ -30,22 +30,24 @@ set(tricycle_include_dir "${PROJECT_SOURCE_DIR}/include")
 set(tricycle_source_dir "${PROJECT_SOURCE_DIR}/src")
 
 set(headers
-        ${tricycle_include_dir}/generic_service_constants.h
-        ${tricycle_include_dir}/generic_service_types.h
-        ${tricycle_include_dir}/generic_service.h
+        ${tricycle_include_dir}/proxy_service_constants.h
+        ${tricycle_include_dir}/proxy_service_types.h
+        ${tricycle_include_dir}/proxy_service.h
         ${tricycle_include_dir}/json.h
         ${tricycle_include_dir}/json-forwards.h
         ${tricycle_include_dir}/tricycle.hpp
         ${tricycle_include_dir}/tricycle_server.hpp
+        ${tricycle_include_dir}/tricycle_client.hpp
         )
 
 set(sources
-        ${tricycle_source_dir}/generic_service_constants.cpp
-        ${tricycle_source_dir}/generic_service_types.cpp
-        ${tricycle_source_dir}/generic_service.cpp
+        ${tricycle_source_dir}/proxy_service_constants.cpp
+        ${tricycle_source_dir}/proxy_service_types.cpp
+        ${tricycle_source_dir}/proxy_service.cpp
         ${tricycle_source_dir}/jsoncpp.cpp
         ${tricycle_source_dir}/tricycle.cpp
         ${tricycle_source_dir}/tricycle_server.cpp
+        ${tricycle_source_dir}/tricycle_client.cpp
         )
 
 add_library(tricycle SHARED
@@ -55,13 +57,15 @@ add_library(tricycle SHARED
 # so 版本号配置
 # so 暴露 header 配置
 set(tricycle_public_headers
-        ${tricycle_include_dir}/generic_service.h
-        ${tricycle_include_dir}/generic_service_constants.h
-        ${tricycle_include_dir}/generic_service_types.h
+        ${tricycle_include_dir}/proxy_service.h
+        ${tricycle_include_dir}/proxy_service_constants.h
+        ${tricycle_include_dir}/proxy_service_types.h
         ${tricycle_include_dir}/json.h
         ${tricycle_include_dir}/json-forwards.h
         ${tricycle_include_dir}/tricycle.hpp
-        ${tricycle_include_dir}/tricycle_server.hpp)
+        ${tricycle_include_dir}/tricycle_server.hpp
+        ${tricycle_include_dir}/tricycle_client.hpp
+        )
 
 set_target_properties(${module_name} PROPERTIES
         VERSION ${PROJECT_VERSION}
