@@ -7,7 +7,7 @@
 #include <thrift/transport/TBufferTransports.h>
 #include <stdio.h>
 
-#include "tricycle/proxy_service.h"
+#include "proxy_service.h"
 #include "tricycle_client.hpp"
 
 using namespace ::apache::thrift;
