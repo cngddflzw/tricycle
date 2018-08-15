@@ -2,12 +2,12 @@
 // Created by Zhenwei Liu on 2018/8/14.
 //
 
-#include <tricycle/proxy_service.h>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <stdio.h>
 
+#include "tricycle/proxy_service.h"
 #include "tricycle_client.hpp"
 
 using namespace ::apache::thrift;
