@@ -34,7 +34,7 @@ int main() {
     Request request = Request();
     request.group = "arch";
     request.version = "1.0.0";
-    request.class_name = "com.zim.demo.rpcproxy.java.DemoJavaService";
+    request.class_name = "com.zim.demo.rpcproxy.java.service.DemoJavaService";
     request.func_name = "sayHello";
     request.param = "[\"Zim\"]";
 

@@ -16,7 +16,7 @@ make
 make install
 ```
 
-之后 tricycle 将会被安装到 /usr/local/include 以及 /usr/local/lib
+之后 tricycle 将会被安装到 /usr/local/include 以及 /usr/local/lib (or /usr/local/lib64)
 
 ## 使用 tricycle
 

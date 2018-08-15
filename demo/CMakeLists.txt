@@ -25,7 +25,7 @@ LINK_DIRECTORIES(/usr/local/lib)
 
 set(demo_source_dir ${PROJECT_SOURCE_DIR}/src)
 
-add_executable(tricycle_server_demo
+add_executable(tricycle_demo_server
         ${demo_source_dir}/server_demo.cpp
         ${demo_source_dir}/demo_service.hpp
         ${demo_source_dir}/demo_service.cpp
@@ -34,12 +34,12 @@ add_executable(tricycle_server_demo
 # 如果是 OSX, 需要在 .bash_profile 设置一下环境变量, 否则会找不到 dylib
 # export DYLD_LIBRARY_PATH=/usr/local/lib/tricycle:$DYLD_LIBRARY_PATH
 
-TARGET_LINK_LIBRARIES(tricycle_server_demo ${tricycle_lib_dir})
+TARGET_LINK_LIBRARIES(tricycle_demo_server ${tricycle_lib_dir})
 
-add_executable(tricycle_client_demo
+add_executable(tricycle_demo_client
         ${demo_source_dir}/client_demo.cpp
         ${demo_source_dir}/demo_service.hpp
         ${demo_source_dir}/demo_service.cpp
         )
 
-TARGET_LINK_LIBRARIES(tricycle_client_demo ${tricycle_lib_dir})
+TARGET_LINK_LIBRARIES(tricycle_demo_client ${tricycle_lib_dir})
