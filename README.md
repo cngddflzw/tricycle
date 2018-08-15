@@ -1,5 +1,10 @@
 # Quick Start
 
+## 依赖版本
+
+* thrift@0.9.0
+* boost@1.6.0
+
 ## 编译 tricycle
 
 ```
